@@ -9,18 +9,35 @@ provider:
   timeout: 120
 
 functions:
-  getAllTodos:
-    handler: handler.getAllTodos
+  getAllEMP:
+    handler: handler.getAllEMP
     events:
       - http:
           path: employees
           method: get
           cors: true
-  updateTodo:
-    handler: handler.updateTodo
+
+  updateEMP:
+    handler: handler.updateEMP
     events:
       - http:
-          path: employees/{req_id}
+          path: employees/{id}
+          method: put
+          cors: true
+  
+  getAllHR:
+    handler: handler.getAllHR
+    events:
+      - http:
+          path: human_resource
+          method: get
+          cors: true
+
+  updateHR:
+    handler: handler.updateHR
+    events:
+      - http:
+          path: human_resource/{id}
           method: put
           cors: true
 

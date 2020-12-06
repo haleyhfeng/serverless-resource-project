@@ -19,7 +19,7 @@ module.exports.getAllEMP = (event, context, callback) => {
       })
     })
 };
-
+/*
 module.exports.updateEMP = (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false;
   const data = JSON.parse(event.body);
@@ -37,7 +37,7 @@ module.exports.updateEMP = (event, context, callback) => {
       })
     }) 
 };
-
+*/
 /*
 // For Human Resource
 module.exports.getAllHR = (event, context, callback) => {

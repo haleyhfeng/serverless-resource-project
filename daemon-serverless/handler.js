@@ -8,13 +8,7 @@ module.exports.getAllEMP = (event, context, callback) => {
   db.getAll('project_requirements')
     .then(
       )
-    .catch(e => {
-      console.log(e);
-      callback(null, {
-        statusCode: e.statusCode || 500,
-        body: 'Error: Could not find Todos: ' + e
-      })
-    })
+    .catch()
 };
 
 

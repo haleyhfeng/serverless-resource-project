@@ -2,7 +2,7 @@ const db = require('./db_connect');
 'use strict';
 
 // For Employees
-
+/*
 module.exports.getAllEMP = (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false;
   db.getAll('project_requirements')
@@ -11,7 +11,7 @@ module.exports.getAllEMP = (event, context, callback) => {
     .catch()
 };
 
-
+*/
 /*
 module.exports.getAllEMP = (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false;

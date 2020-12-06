@@ -76,7 +76,7 @@ module.exports.updateHR = (event, context, callback) => {
     }) 
 };
 
-/*module.exports.createTodo = (event, context, callback) => {
+module.exports.createHR = (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false;
   const data = JSON.parse(event.body);
   db.insert('app_receive', data)
@@ -92,7 +92,7 @@ module.exports.updateHR = (event, context, callback) => {
         body: "Could not create Todo " + e
       })
     })
-};*/
+};
 
 
 

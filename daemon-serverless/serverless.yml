@@ -41,6 +41,14 @@ functions:
           method: put
           cors: true
 
+  createHR:
+    handler: handler.createHR
+    events:
+      - http:
+          path: human_resource
+          method: post
+          cors: true 
+
 
 
 plugins:

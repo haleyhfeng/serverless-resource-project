@@ -2,6 +2,22 @@ const db = require('./db_connect');
 'use strict';
 
 // For Employees
+
+module.exports.getAllEMP = (event, context, callback) => {
+  context.callbackWaitsForEmptyEventLoop = false;
+  db.getAll('project_requirements')
+    .then(
+      )
+    .catch(e => {
+      console.log(e);
+      callback(null, {
+        statusCode: e.statusCode || 500,
+        body: 'Error: Could not find Todos: ' + e
+      })
+    })
+};
+
+
 /*
 module.exports.getAllEMP = (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false;
@@ -21,7 +37,7 @@ module.exports.getAllEMP = (event, context, callback) => {
     })
 };
 */
-
+/*
 module.exports.updateEMP = (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false;
   const data = JSON.parse(event.body);
@@ -39,7 +55,7 @@ module.exports.updateEMP = (event, context, callback) => {
       })
     }) 
 };
-
+*/
 /*
 // For Human Resource
 module.exports.getAllHR = (event, context, callback) => {

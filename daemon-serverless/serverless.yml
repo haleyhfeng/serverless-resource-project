@@ -48,7 +48,5 @@ functions:
           method: post
           cors: true 
 
-
-
 plugins:
   - serverless-offline

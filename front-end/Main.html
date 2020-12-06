@@ -16,7 +16,6 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-
             //------------new code on Dec 2th, to recieve the username from auth page -------------------------------
             var user_name = sessionStorage.getItem("username");
             //alert(user_name);
@@ -57,7 +56,7 @@
                                 "orderable": false,
                                 "width": "2%",
                                 "render": function(data, type, row, meta) {
-                                    var content = "<button value='Apply' onClick='var temp = Apply(\"" + data + "\"); InsertHR(\"" + data + "\"); return temp;'>"
+                                    var content = "<button value='Apply' onClick='Apply(\"" + data + "\");InsertHR(\"" + data + "\");'>"
                                     return content
                                 }
                             }
@@ -70,8 +69,6 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-
-
             //------------new code on Dec 2th, to recieve the username from auth page -------------------------------
             var user_name = sessionStorage.getItem("username");
             //alert(user_name);
@@ -168,17 +165,14 @@
                                 "orderable": false,
                                 "width": "2%",
                                 "render": function(data, type, row, meta) {
-                                    var content = "<button value='Apply' onClick='var temp = Apply(\"" + data + "\"); InsertHR(\"" + data + "\"); return temp;'/>"
+                                    var content = "<button value='Apply' onClick='Apply(\"" + data + "\");InsertHR(\"" + data + "\");'>"
                                     return content
                                 }
                             }
                         ]
                     }
                 );
-            //----------new code on Dec 2th---------------------------------------------
             };
-            //-----------end of new code on Dec 2th------------------------------------
-
         });
 
     </script>
@@ -364,7 +358,7 @@
 
                             <th>
 
-                                Req Id
+                                App Id
 
                             </th>
 
@@ -447,11 +441,4 @@
     </div>
 
 </body>
-
-
-
-
-
-
-
 </html>

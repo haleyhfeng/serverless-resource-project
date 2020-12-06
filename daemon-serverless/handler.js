@@ -38,7 +38,7 @@ module.exports.updateEMP = (event, context, callback) => {
     }) 
 };
 
-
+/*
 // For Human Resource
 module.exports.getAllHR = (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false;
@@ -94,5 +94,5 @@ module.exports.createHR = (event, context, callback) => {
     })
 };
 
-
+*/
 

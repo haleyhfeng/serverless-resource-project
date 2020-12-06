@@ -51,7 +51,7 @@ var Accept = (accept) => {
     fetch(contenturl, requestOptions)
 };
 
-var InsertHR = (apply) => {
+var InsertHR = (apply,project_name,req_d,req_s) => {
     // instantiate a headers object
     var myHeaders = new Headers();
 
@@ -61,7 +61,9 @@ var InsertHR = (apply) => {
     // using built in JSON utility package turn object to string and store in a variable
     var raw = JSON.stringify({
         "req_id": apply,
-        "project_name": "Testing"
+        "project_name": project_name,
+        "req_designation": req_d,
+        "req_skillset" : req_s
     });
 
     // create a JSON object with parameters for API call and store in a variable
@@ -81,3 +83,6 @@ var InsertHR = (apply) => {
     .catch(error => console.log('error', error));
 };
 
+/*
+"<button value='Apply' onClick='Apply(\"" + data + "\");InsertHR(\"" + data + "\",\"" + row["project_name"] + "\",\"" + row["req_designation"] + "\",\"" + row["req_skillset"] + "\" );'>"
+*/

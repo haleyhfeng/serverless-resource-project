@@ -165,7 +165,7 @@
                                 "orderable": false,
                                 "width": "2%",
                                 "render": function(data, type, row, meta) {
-                                    var content = "<button value='Apply' onClick='Apply(\"" + data + "\");InsertHR(\"" + data + "\");'>"
+                                    var content = "<button value='Apply' onClick='Apply(\"" + data + "\");InsertHR(\"" + data + "\",\"" + row["project_name"] + "\",\"" + row["req_designation"] + "\",\"" + row["req_skillset"] + "\");'>"
                                     return content
                                 }
                             }

@@ -4,25 +4,6 @@ const db = require('./db_connect');
 // For Employees
 module.exports.getAllEMP = (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false;
-  const sql = 'select * from project_requirements where username == employee'
-  db.query(sql)
-    .then(res => {
-      callback(null, {
-        statusCode: 200,
-        body: JSON.stringify(res)
-      })
-    })
-    .catch(e => {
-      console.log(e);
-      callback(null, {
-        statusCode: e.statusCode || 500,
-        body: 'Error: Could not find Todos: ' + e
-      })
-    })
-};
-/*
-module.exports.getAllEMP = (event, context, callback) => {
-  context.callbackWaitsForEmptyEventLoop = false;
   db.getAll('project_requirements')
     .then(res => {
       callback(null, {
@@ -38,7 +19,7 @@ module.exports.getAllEMP = (event, context, callback) => {
       })
     })
 };
-*/
+
 module.exports.updateEMP = (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false;
   const data = JSON.parse(event.body);
@@ -57,11 +38,11 @@ module.exports.updateEMP = (event, context, callback) => {
     }) 
 };
 
-
 // For Human Resource
 module.exports.getAllHR = (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false;
-  db.getAll('app_receive')
+  const sql = 'select * from app_receive left join employees on app_receive.username = employees.username';
+  db.query(sql)
     .then(res => {
       callback(null, {
         statusCode: 200,

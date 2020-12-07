@@ -84,6 +84,3 @@ var InsertHR = (apply,project_name,req_d,req_s,user) => {
     .catch(error => console.log('error', error));
 };
 
-/*
-"<button value='Apply' onClick='Apply(\"" + data + "\");InsertHR(\"" + data + "\",\"" + row["project_name"] + "\",\"" + row["req_designation"] + "\",\"" + row["req_skillset"] + "\" );'>"
-*/

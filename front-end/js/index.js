@@ -31,10 +31,16 @@ $(function() {
             onSuccess: function (result) {
                 //alert('access token + ' + result.getAccessToken().getJwtToken());
                 //alert('idToken + ' + result.idToken.jwtToken);
+
                 alert("Successfully Login");
-                sessionStorage.setItem("username",username); 
+                sessionStorage.setItem("username",username);
+
+                var sessionIdInfo = jwt_decode(result.idToken.jwtToken);
+                var groupinfo = sessionIdInfo['cognito:groups'];
+                sessionStorage.setItem("groupinfo",groupinfo)
+                alert("Group Info :"+ groupinfo);
+
                 location.href = 'Main.html';
-                
             },
 
             onFailure: function(err) {

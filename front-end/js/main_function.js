@@ -1,4 +1,4 @@
-var Apply = (apply) => {
+/*var Apply = (apply) => {
     // instantiate a headers object
     var myHeaders = new Headers();
 
@@ -22,7 +22,7 @@ var Apply = (apply) => {
     contenturl = "https://7p76txd3xj.execute-api.us-east-2.amazonaws.com/dev/employees/" + apply
 
     fetch(contenturl, requestOptions)
-};
+};*/
 
 
 var Accept = (accept) => {
@@ -51,7 +51,7 @@ var Accept = (accept) => {
     fetch(contenturl, requestOptions)
 };
 
-var InsertHR = (apply,project_name,req_d,req_s) => {
+var InsertHR = (apply,project_name,req_d,req_s,user) => {
     // instantiate a headers object
     var myHeaders = new Headers();
 
@@ -63,7 +63,8 @@ var InsertHR = (apply,project_name,req_d,req_s) => {
         "req_id": apply,
         "project_name": project_name,
         "req_designation": req_d,
-        "req_skillset" : req_s
+        "req_skillset" : req_s,
+        "username" :user
     });
 
     // create a JSON object with parameters for API call and store in a variable

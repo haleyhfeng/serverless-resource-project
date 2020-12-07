@@ -17,9 +17,12 @@
     <script type="text/javascript">
         $(document).ready(function() {
             //------------new code on Dec 2th, to recieve the username from auth page -------------------------------
+            /*var group = groupinfo*/
+
             var user_name = sessionStorage.getItem("username");
+            var group_info = sessionStorage.getItem("groupinfo");
             //alert(user_name);
-            if (user_name == 'employee') {
+            if (group_info == 'Employee') {
                 alert("welcome " + user_name)
                 document.getElementById("Applicationtitle").style.visibility = "hidden"
 
@@ -48,15 +51,12 @@
                                 "data": "req_skillset"
                             },
                             {
-                                "data": "apply"
-                            },
-                            {
                                 //on the last colume, we use the data as parameter to call function "apply" , and make content as button
                                 "data": "id",
                                 "orderable": false,
-                                "width": "2%",
+                                "width": "50%",
                                 "render": function(data, type, row, meta) {
-                                    var content = "<button value='Apply' onClick='Apply(\"" + data + "\");InsertHR(\"" + data + "\");'>"
+                                    var content = "<button value='Apply'  onClick='InsertHR(\"" + data + "\",\"" + row["project_name"] + "\",\"" + row["req_designation"] + "\",\"" + row["req_skillset"] + "\",\"" + user_name + "\");' class='test'>"
                                     return content
                                 }
                             }
@@ -66,13 +66,14 @@
             }
         });
     </script>
-
+    
     <script type="text/javascript">
         $(document).ready(function() {
             //------------new code on Dec 2th, to recieve the username from auth page -------------------------------
             var user_name = sessionStorage.getItem("username");
+            var group_info = sessionStorage.getItem("groupinfo");
             //alert(user_name);
-            if (user_name == 'manager') {
+            if (group_info == 'Manager') {
                 alert(user_name)
                 document.getElementById("Requirementstitle").style.visibility = "visible"
                 document.getElementById("Applicationtitle").style.visibility = "visible"
@@ -96,7 +97,7 @@
                                 "data": "project_name"
                             },
                             {
-                                "data": "email_id"
+                                "data": "username"
                             },
                             {
                                 "data": "emp_name"
@@ -125,7 +126,7 @@
                                 "orderable": false,
                                 "width": "2%",
                                 "render": function(data, type, row, meta) {
-                                    var content = "<button value='Accept' onClick='Accept(\"" + data + "\")'>"
+                                    var content = "<button value='Accept' onClick='Accept(\"" + data + "\")' class='test'>"
                                     return content
                                 }
                             }
@@ -157,16 +158,13 @@
                                 "data": "req_skillset"
                             },
                             {
-                                "data": "apply"
-                            },
-                            {
                                 //on the last colume, we use the data as parameter to call function "apply" , and make content as button
                                 "data": "id",
                                 "orderable": false,
                                 "width": "2%",
                                 "render": function(data, type, row, meta) {
-                                    var content = "<button value='Apply' onClick='Apply(\"" + data + "\");InsertHR(\"" + data + "\",\"" + row["project_name"] + "\",\"" + row["req_designation"] + "\",\"" + row["req_skillset"] + "\");'>"
-                                    return content
+                                    var input = "<button value='Apply' type='button' onClick='InsertHR(\"" + data + "\",\"" + row["project_name"] + "\",\"" + row["req_designation"] + "\",\"" + row["req_skillset"] + "\",\"" + user_name + "\");' class='test'>"
+                                    return input
                                 }
                             }
                         ]
@@ -180,14 +178,19 @@
 
 <style>
     .padding-10 {
-
         padding: 10px;
-
     }
+    .test{
+    height:20px;
+    width:45px;
+	text-align: center;
+	font-size: 16px;
+	color: black;
 
+}
 </style>
 
-
+<script src="js/lib/jwt-decode.js"></script>
 <script type="text/javascript" src="js/main_function.js"></script>
 
 <script type="text/javascript">
@@ -198,7 +201,6 @@
         btn.attr("disabled", "disabled"); // disable button
 
     });
-
 </script>
 
 
@@ -316,12 +318,6 @@
 
                             </th>
 
-                            <th>
-
-                                Application Status
-
-                            </th>
-
                         </tr>
 
                     </thead>
@@ -362,7 +358,7 @@
 
                             <th>
 
-                                Employee Email-id
+                                Employee Username
 
                             </th>
 

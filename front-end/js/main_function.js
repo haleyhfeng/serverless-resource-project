@@ -1,4 +1,4 @@
-/*var Apply = (apply) => {
+var Apply = (apply) => {
     // instantiate a headers object
     var myHeaders = new Headers();
 
@@ -19,10 +19,10 @@
     };
 
     // make API call with parameters and use promises to get response
-    contenturl = "https://7p76txd3xj.execute-api.us-east-2.amazonaws.com/dev/employees/" + apply
+    contenturl = "https://35gbwo3wdb.execute-api.us-east-2.amazonaws.com/dev/employees/" + apply
 
     fetch(contenturl, requestOptions)
-};*/
+};
 
 
 var Accept = (accept) => {
@@ -46,7 +46,7 @@ var Accept = (accept) => {
     };
 
     // make API call with parameters and use promises to get response
-    contenturl = "https://7p76txd3xj.execute-api.us-east-2.amazonaws.com/dev/human_resource/" + accept
+    contenturl = "https://35gbwo3wdb.execute-api.us-east-2.amazonaws.com/dev/human_resource/" + accept
 
     fetch(contenturl, requestOptions)
 };
@@ -76,7 +76,7 @@ var InsertHR = (apply,project_name,req_d,req_s,user) => {
     };
 
     // make API call with parameters and use promises to get response
-    contenturl = "https://7p76txd3xj.execute-api.us-east-2.amazonaws.com/dev/human_resource"
+    contenturl = "https://35gbwo3wdb.execute-api.us-east-2.amazonaws.com/dev/human_resource"
 
     fetch(contenturl, requestOptions)
     .then(response => response.text())

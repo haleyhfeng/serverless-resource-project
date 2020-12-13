@@ -20,4 +20,4 @@ AWS API
 Database: 
 PostgreSQL with Node module Postgresql-easy
 
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/haleyhfeng/serverless-resource-project/blob/master/CMPE_272_ProjectReport.jpg)

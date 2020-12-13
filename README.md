@@ -13,11 +13,12 @@ Professor: Andrew Bond
 
 Frontend:
 HTML, CSS, Javascript, JQuery, Bootstrap
+
 Backend:
 AWS Lambda
 Node JS (10.x), YAML
 AWS API
 AWS Cognito
+
 Database: 
-PostgreSQL
-Node module: Postgresql-easy
+PostgreSQL with Node module Postgresql-easy

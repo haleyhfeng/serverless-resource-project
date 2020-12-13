@@ -1,5 +1,5 @@
 var Apply = (apply) => {
-    // instantiate a headers objec
+    // instantiate a headers obj
     var myHeaders = new Headers();
 
     // add content type header to object

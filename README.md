@@ -1,8 +1,6 @@
 # Resource Management 
 
-University Name: SJSU
-Course: Enterprise Software Platforms CMPE-272
-Professor: Andrew Bond
+SJSU, Enterprise Software Platforms CMPE-272, Professor - Andrew Bond
 
 **Team Members:**
 • Stuti Agarwal

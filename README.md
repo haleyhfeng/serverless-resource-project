@@ -19,3 +19,5 @@ AWS API
 
 Database: 
 PostgreSQL with Node module Postgresql-easy
+
+![alt text](http://url/to/img.png)

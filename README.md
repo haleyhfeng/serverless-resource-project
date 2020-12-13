@@ -10,13 +10,12 @@ SJSU, Enterprise Software Platforms CMPE-272, Professor - Andrew Bond
 **Technology Used:**
 
 Frontend (front-end folder):
-HTML, CSS, Javascript, JQuery, Bootstrap
+HTML, CSS, Javascript, JQuery, Bootstrap, AWS Cognito
 
 Backend (daemon-serverless folder):
 AWS Lambda
 Node JS (10.x), YAML
 AWS API
-AWS Cognito
 
 Database: 
 PostgreSQL with Node module Postgresql-easy
